@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CDD – Firma Docente</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="h1">Firma presenza – CDD</h1>
+      <p class="sub" id="meetInfo">—</p>
+      <div class="row">
+        <div>
+          <label>Nome</label>
+          <input id="nome" autocomplete="off" />
+        </div>
+        <div>
+          <label>Cognome</label>
+          <input id="cognome" autocomplete="off" />
+        </div>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <div>
+          <label>Email istituzionale</label>
+          <input id="email" placeholder="nome.cognome@ittsrimini.edu.it" autocomplete="off" />
+        </div>
+        <div class="center">
+          <div id="status" class="badge">In attesa…</div>
+        </div>
+      </div>
+
+      <div style="margin-top:10px">
+        <label>Firma digitale</label>
+        <canvas class="sig" id="pad" height="220"></canvas>
+        <div class="stack" style="margin-top:8px">
+          <button class="btn warn" id="clear">Pulisci</button>
+          <button class="btn ok" id="submit">Firma e invia</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="meet.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CDD – Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="h1">Amministrazione CDD</h1>
+      <p class="sub">Crea una riunione, genera il QR per i docenti, e scarica il PDF dei registri con firme.</p>
+      <div class="row">
+        <div>
+          <label>Titolo riunione</label>
+          <input id="meetTitle" placeholder="CDD Dipartimento" />
+        </div>
+        <div>
+          <label>Data e ora</label>
+          <input id="meetWhen" type="datetime-local" />
+        </div>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <div>
+          <label>Token (opzionale, lascia vuoto per generarlo)</label>
+          <input id="meetToken" placeholder="verrà generato" />
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button class="btn" id="create">Crea + QR</button>
+        </div>
+      </div>
+      <div style="margin-top:10px">
+        <label>QR riunione</label>
+        <div class="qrbox" id="qrBox"></div>
+        <div class="stack" style="margin-top:10px">
+          <button class="btn secondary" id="dlQR">Scarica QR</button>
+          <a class="btn" id="openMeet" target="_blank">Apri pagina firma</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h2 class="h1">Scarica PDF registri</h2>
+      <p class="sub">Inserisci il token riunione e scarica il PDF delle presenze con firme.</p>
+      <div class="row">
+        <div>
+          <label>Token riunione</label>
+          <input id="pdfToken" placeholder="incolla qui il token" />
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button class="btn" id="makePDF">Scarica PDF</button>
+        </div>
+      </div>
+      <div id="pdfStatus" class="sub"></div>
+    </div>
+  </div>
+  <script src="qr.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
